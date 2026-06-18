@@ -1,32 +1,93 @@
+<!-- dashboard.html -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Dashboard</title>
-    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        body{
+            font-family:Arial,sans-serif;
+            background:linear-gradient(135deg,#dbeafe,#f8fafc);
+            margin:0;
+        }
+
+        .navbar{
+            background:#0A66C2;
+            color:white;
+            padding:18px;
+            text-align:center;
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        .cards{
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:25px;
+            margin-top:60px;
+        }
+
+        .card{
+            width:250px;
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0 8px 20px rgba(0,0,0,.15);
+            transition:.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-6px);
+        }
+
+        .card h2{
+            color:#0A66C2;
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:15px;
+            padding:12px 20px;
+            background:#0A66C2;
+            color:white;
+            text-decoration:none;
+            border-radius:8px;
+        }
+
+        .btn:hover{
+            background:#084d94;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h1>Employee Management System</h1>
-    <h2>Dashboard</h2>
+<div class="navbar">
+    🏢 Employee Management System Dashboard
+</div>
 
-    <br>
+<div class="cards">
 
-    <a href="/add-employee">
-        <button>Add Employee</button>
-    </a>
+    <div class="card">
+        <h2>➕ Add Employee</h2>
+        <p>Create a new employee record.</p>
+        <a href="/add-employee" class="btn">Open</a>
+    </div>
 
-    <br><br>
+    <div class="card">
+        <h2>👥 View Employees</h2>
+        <p>View, edit or delete employees.</p>
+        <a href="/view-employees" class="btn">Open</a>
+    </div>
 
-    <a href="/view-employees">
-        <button>View Employees</button>
-    </a>
+    <div class="card">
+        <h2>🚪 Logout</h2>
+        <p>Exit your account securely.</p>
+        <a href="/login" class="btn">Logout</a>
+    </div>
 
-    <br><br>
-
-    <a href="/login">
-        <button>Logout</button>
-    </a>
 </div>
 
 </body>

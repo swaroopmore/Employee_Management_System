@@ -2,39 +2,136 @@
 <html>
 <head>
     <title>Edit Employee</title>
-    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:linear-gradient(135deg,#dbeafe,#f8fafc);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:420px;
+            background:white;
+            padding:35px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.15);
+            text-align:center;
+            transition:0.3s;
+        }
+
+        .container:hover{
+            transform:translateY(-5px);
+        }
+
+        h1{
+            color:#0A66C2;
+            margin-bottom:5px;
+        }
+
+        h3{
+            color:#666;
+            margin-bottom:25px;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+            border:1px solid #ccc;
+            border-radius:8px;
+            font-size:15px;
+            box-sizing:border-box;
+        }
+
+        input:focus{
+            outline:none;
+            border-color:#0A66C2;
+            box-shadow:0 0 6px rgba(10,102,194,0.3);
+        }
+
+        .update-btn{
+            width:100%;
+            padding:12px;
+            background:#0A66C2;
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-size:16px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .update-btn:hover{
+            background:#084d94;
+        }
+
+        .back-btn{
+            display:inline-block;
+            margin-top:15px;
+            text-decoration:none;
+            color:white;
+            background:#6c757d;
+            padding:10px 20px;
+            border-radius:8px;
+            transition:0.3s;
+        }
+
+        .back-btn:hover{
+            background:#495057;
+        }
+    </style>
 </head>
+
 <body>
 
 <div class="container">
-    <h1>Edit Employee</h1>
 
-    <form action="/edit-employee/{{ employee.id }}" method="post">
+    <h1>✏️ Edit Employee</h1>
+    <h3>Update Employee Information</h3>
 
-        <label>Name</label><br>
-        <input type="text" name="name" value="{{ employee.name }}" required>
-        <br><br>
+    <form action="/update-employee/{{ employee.id }}" method="post">
 
-        <label>Age</label><br>
-        <input type="number" name="age" value="{{ employee.age }}" required>
-        <br><br>
+        <input
+            type="text"
+            name="name"
+            value="{{ employee.name }}"
+            required
+        >
 
-        <label>Department</label><br>
-        <input type="text" name="department" value="{{ employee.department }}" required>
-        <br><br>
+        <input
+            type="number"
+            name="age"
+            value="{{ employee.age }}"
+            required
+        >
 
-        <label>Salary</label><br>
-        <input type="number" name="salary" value="{{ employee.salary }}" required>
-        <br><br>
+        <input
+            type="text"
+            name="department"
+            value="{{ employee.department }}"
+            required
+        >
 
-        <button type="submit">Update Employee</button>
+        <input
+            type="number"
+            name="salary"
+            value="{{ employee.salary }}"
+            required
+        >
+
+        <button type="submit" class="update-btn">
+            💾 Update Employee
+        </button>
 
     </form>
 
-    <br>
-
-    <a href="/view-employees">
-        <button>Cancel</button>
+    <a href="/view-employees" class="back-btn">
+        ⬅ Back to Employee List
     </a>
 
 </div>

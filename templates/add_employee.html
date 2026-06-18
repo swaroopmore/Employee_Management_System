@@ -2,35 +2,136 @@
 <html>
 <head>
     <title>Add Employee</title>
-    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:linear-gradient(135deg,#dbeafe,#f8fafc);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:420px;
+            background:#ffffff;
+            padding:35px;
+            border-radius:15px;
+            box-shadow:0 8px 25px rgba(0,0,0,0.15);
+            text-align:center;
+            transition:0.3s;
+        }
+
+        .container:hover{
+            transform:translateY(-5px);
+        }
+
+        h1{
+            color:#0A66C2;
+            margin-bottom:5px;
+        }
+
+        h3{
+            color:#666;
+            margin-bottom:25px;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+            border:1px solid #ccc;
+            border-radius:8px;
+            font-size:15px;
+            box-sizing:border-box;
+        }
+
+        input:focus{
+            outline:none;
+            border-color:#0A66C2;
+            box-shadow:0 0 5px rgba(10,102,194,0.3);
+        }
+
+        .btn{
+            width:100%;
+            padding:12px;
+            background:#0A66C2;
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-size:16px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#084d94;
+        }
+
+        .back-btn{
+            display:inline-block;
+            margin-top:15px;
+            text-decoration:none;
+            color:white;
+            background:#6c757d;
+            padding:10px 20px;
+            border-radius:8px;
+            transition:0.3s;
+        }
+
+        .back-btn:hover{
+            background:#495057;
+        }
+    </style>
 </head>
+
 <body>
 
 <div class="container">
-    <h1>Add Employee</h1>
+
+    <h1>👨‍💼 Add Employee</h1>
+    <h3>Enter Employee Details</h3>
 
     <form action="/add-employee" method="post">
 
-        <label>Name</label><br>
-        <input type="text" name="name" required><br><br>
+        <input
+            type="text"
+            name="name"
+            placeholder="Employee Name"
+            required
+        >
 
-        <label>Age</label><br>
-        <input type="number" name="age" required><br><br>
+        <input
+            type="number"
+            name="age"
+            placeholder="Age"
+            required
+        >
 
-        <label>Department</label><br>
-        <input type="text" name="department" required><br><br>
+        <input
+            type="text"
+            name="department"
+            placeholder="Department"
+            required
+        >
 
-        <label>Salary</label><br>
-        <input type="number" name="salary" required><br><br>
+        <input
+            type="number"
+            name="salary"
+            placeholder="Salary"
+            required
+        >
 
-        <button type="submit">Add Employee</button>
+        <button class="btn" type="submit">
+            ➕ Add Employee
+        </button>
 
     </form>
 
-    <br>
-
-    <a href="/dashboard">
-        <button>Back to Dashboard</button>
+    <a href="/dashboard" class="back-btn">
+        ⬅ Back to Dashboard
     </a>
 
 </div>
