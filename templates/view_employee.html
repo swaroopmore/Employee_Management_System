@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Employees</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>All Employees</h1>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for emp in employees %}
+        <tr>
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.age }}</td>
+            <td>{{ emp.department }}</td>
+            <td>{{ emp.salary }}</td>
+            <td>
+                <!-- Edit Button -->
+                <a href="/edit-employee/{{ emp.id }}">
+                    <button>Edit</button>
+                </a>
+
+                <!-- Delete Button -->
+                <a href="/delete-employee/{{ emp.id }}">
+                    <button onclick="return confirm('Are you sure you want to delete this employee?')">
+                        Delete
+                    </button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <br><br>
+
+    <a href="/add-employee">
+        <button>Add New Employee</button>
+    </a>
+
+    <a href="/dashboard">
+        <button>Back to Dashboard</button>
+    </a>
+
+</div>
+
+</body>
+</html>

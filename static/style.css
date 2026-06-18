@@ -1,0 +1,154 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #eef3f8, #dfe9f3);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red !important
+}
+
+/* Main Card */
+.container {
+    width: 420px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* Titles */
+h1 {
+    text-align: center;
+    color: #0a66c2;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+h2 {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cfd9e6;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 18px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #0a66c2;
+    box-shadow: 0 0 8px rgba(10, 102, 194, 0.25);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: #0a66c2;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    background: #004182;
+    transform: scale(1.03);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Divider */
+hr {
+    margin: 25px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+/* Paragraph */
+p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+}
+
+/* Tables */
+table {
+    width: 95%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+th {
+    background: #0a66c2;
+    color: white;
+    padding: 15px;
+}
+
+td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background-color: #f4f9ff;
+    transition: 0.2s;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .container {
+        width: 92%;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
